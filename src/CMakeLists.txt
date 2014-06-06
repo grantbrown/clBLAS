@@ -14,19 +14,20 @@
 # limitations under the License.
 # ########################################################################
 
+
 cmake_minimum_required(VERSION 2.8)
 
 #User toggle-able options that can be changed on the command line with -D
 option( BUILD_RUNTIME "Build the BLAS runtime library" ON )
-option( BUILD_TEST "Build the library testing suite (dependency on google test, Boost, and ACML)" ON )
+option( BUILD_TEST "Build the library testing suite (dependency on google test, Boost, and ACML)" OFF )
 option( BUILD_PERFORMANCE "Copy the performance scripts that can measure and graph performance" OFF )
 option( BUILD_SAMPLE "Build the sample programs" OFF )
 option( BUILD_CLIENT "Build a command line clBLAS client program with a variety of configurable parameters (dependency on Boost)" OFF )
-option( BUILD_KTEST "A command line tool for testing single clBLAS kernel" ON )
+option( BUILD_KTEST "A command line tool for testing single clBLAS kernel" OFF )
 
 # By default test-correctness is linked and tested against ACML library.
 # However, test-correctness can instead use NETLIB as a reference library
-set(CORR_TEST_WITH_ACML ON CACHE BOOL "Use ACML library in correctness tests")
+set(CORR_TEST_WITH_ACML OFF CACHE BOOL "Use ACML library in correctness tests")
 
 if( CMAKE_GENERATOR MATCHES "NMake" )
   option( NMAKE_COMPILE_VERBOSE "Print compile and link strings to the console" OFF )
