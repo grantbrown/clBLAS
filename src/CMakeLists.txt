@@ -73,7 +73,7 @@ if( CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT )
 endif( )
 
 if(NOT CMAKE_BUILD_TYPE)
-  set(CMAKE_BUILD_TYPE Debug CACHE STRING
+    set(CMAKE_BUILD_TYPE Release CACHE STRING
       "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel."
       FORCE)
 endif()
